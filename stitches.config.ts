@@ -17,17 +17,13 @@ export const {
 
       gray100: 'hsl(206,22%,99%)',
       gray200: 'hsl(206,12%,97%)',
-      gray300: 'hsl(206,11%,92%)',
-      gray400: 'hsl(206,10%,84%)',
-      gray500: 'hsl(206,10%,76%)',
-      gray600: 'hsl(206,10%,44%)',
 
-      purple100: 'hsl(252,100%,99%)',
-      purple200: 'hsl(252,100%,98%)',
-      purple300: 'hsl(252,100%,94%)',
-      purple400: 'hsl(252,75%,84%)',
-      purple500: 'hsl(252,78%,60%)',
-      purple600: 'hsl(252,80%,53%)',
+      background: '#fff',
+
+
+      amarelo: '#ffd248',
+      marrom: '#3e2705',
+
     },
     space: {
       1: '5px',
@@ -76,7 +72,24 @@ export const {
     }),
   },
   media: {
-    bp1: '(min-width: 520px)',
-    bp2: '(min-width: 900px)',
+    reducaotela_p: '(max-width: 600px)',
+    reducaotela_m: '(max-width: 900px)',
   },
-})
+
+},
+
+)
+export const TemaColorido = createTheme({
+  colors: {
+    background: '#fff',
+    hiContrast: 'hsl(206,10%,5%)',
+    loContrast: 'white',
+
+    amarelo: '#ffd248',
+    marrom: '#3e2705',
+
+  }
+});
+export const estiloGlobal = globalCss({
+  '*': { margin: 0, padding: 0 },
+});

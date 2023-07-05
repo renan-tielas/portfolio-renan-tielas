@@ -1,53 +1,35 @@
 import Head from 'next/head'
-import StitchesLogo from '../components/StitchesLogo'
-import { styled } from '../stitches.config'
-
-const Box = styled('div', {})
-
-const Text = styled('p', {
-  fontFamily: '$system',
-  color: '$hiContrast',
-})
-
-const Link = styled('a', {
-  fontFamily: '$system',
-  textDecoration: 'none',
-  color: '$purple600',
-})
-
-const Container = styled('div', {
-  marginX: 'auto',
-  paddingX: '$3',
-
-  variants: {
-    size: {
-      1: {
-        maxWidth: '300px',
-      },
-      2: {
-        maxWidth: '585px',
-      },
-      3: {
-        maxWidth: '865px',
-      },
-    },
-  },
-})
-
+import StitchesLogo from '../componentes/StitchesLogo'
+import { Tudo, Quadro, Texto, Link, Conteudo, Botao, Navegacao } from '../componentes/ComponentesStitches'
+import { estiloGlobal } from '../stitches.config'
 export default function Home() {
+  estiloGlobal();
   return (
-    <Box css={{ paddingY: '$6' }}>
+    <Tudo>
       <Head>
-        <title>Use Stitches with Next.js</title>
+        <title>Portfolio - Renan Tielas</title>
       </Head>
-      <Container size={{ '@initial': '1', '@bp1': '2' }}>
-        <StitchesLogo />
-        <Text as="h1">Hello, from Stitches.</Text>
-        <Text>
-          For full documentation, visit{' '}
-          <Link href="https://stitches.dev">stitches.dev</Link>.
-        </Text>
-      </Container>
-    </Box>
+      <Conteudo size={{ '@initial': 'larguramax_g', '@reducaotela_p': 'larguramax_p' }}>
+
+        <Quadro size={{ '@initial': 'larguramax_g', '@reducaotela_p': 'larguramax_p' }} >
+          <Texto as="h3">Quem é Renan Tielas?</Texto>
+          <Texto as="p">Sou uma pessoa que está buscando caminhos para desenvolver sites e tecnologias sociais virtuais junto à movimentos sociais.
+            Formando em engenharia ambiental pela UFRJ, me desviei do curso "natural" da graduação para me formar e atuar com agroecologia, e posteriormente em desenvolvimento web.</Texto>
+          <Texto as="p">Esse site diz pouco sobre quem sou, projetos realizados, tecnologias que ja utilizei, e o que estou buscando e desenvolvendo no momento. </Texto>
+
+          <Texto as="p"> Enquanto isso, aprecie a arte generativa, ou brinque com ela clicando no botão ao lado!</Texto>
+          {/* <Botao outlined data-active={true}>ativo</Botao> */}
+        </Quadro>
+
+        <Navegacao>
+          <Botao data-ativo={true}>Web</Botao>
+          <Botao data-ativo={false}>ativo</Botao>
+
+        </Navegacao>
+
+      </Conteudo>
+    </Tudo>
   )
 }
+
+

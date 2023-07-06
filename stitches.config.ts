@@ -1,5 +1,6 @@
 import type * as Stitches from '@stitches/react'
 import { createStitches } from '@stitches/react'
+import josefinSans from './fonts/JosefinSans-Regular.ttf'
 
 export const {
   config,
@@ -34,12 +35,13 @@ export const {
       6: '35px',
     },
     sizes: {
-      1: '5px',
-      2: '10px',
-      3: '15px',
-      4: '20px',
-      5: '25px',
-      6: '35px',
+      0: '2px',
+      1: '2px',
+      2: '5px',
+      3: '10px',
+      4: '15px',
+      5: '20px',
+      6: '30px',
     },
     fontSizes: {
       1: '12px',
@@ -51,6 +53,7 @@ export const {
     },
     fonts: {
       system: 'system-ui',
+      josefinSans: 'Josefin Sans',
     },
   },
   utils: {
@@ -90,6 +93,16 @@ export const TemaColorido = createTheme({
 
   }
 });
-export const estiloGlobal = globalCss({
-  '*': { margin: 0, padding: 0 },
-});
+//implement how to use globalCss with stictches
+
+
+
+
+
+// export const estiloGlobal = globalCss({
+//   '*': { margin: 0, padding: 0 },
+//   '@font-face': {
+//     fontFamily: 'josefinSans',
+//     src: 'local("Josefin Sans"), url("./fonts/JosefinSans-Regular.ttf")',
+//   }
+// });

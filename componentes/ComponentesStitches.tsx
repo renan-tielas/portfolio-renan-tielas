@@ -1,29 +1,57 @@
-import { styled, css } from '../stitches.config'
+import { styled, css, globalCss } from '../stitches.config'
+
+
+const cssGlobal = globalCss({
+    body: {
+        margin: 0,
+        padding: 0,
+        fontFamily: "josefinSans, sans-serif",
+    },
+
+
+    '@font-face': [
+        {
+            fontFamily: 'josefinSans',
+            src: 'local("josefinSans"), url("/fonts/JosefinSans-Regular.ttf")',
+        },
+
+    ],
+
+
+});
+
 
 const Tudo = styled('div', {
-    padding: 0,
-    backgroundColor: '$background',
-    justifyContent: 'center',
+    // padding: 0,
+    // backgroundColor: 'red',
+    // justifyContent: 'center',
+    // fontFamily: '$josefinSans',
+})
+
+const Cabecalho = styled('div', {
+    height: '100px',
+    // backgroundColor: 'red',
+    // justifyContent: 'center',
 
 })
 
-
 const Conteudo = styled('div', {
-    // marginX: 'auto',
+    marginX: 'auto',
     // paddingX: '$3',
     borderColor: '#f87979',
-    backgroundColor: '$amarelo',
+    backgroundColor: '$background',
     width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    // flexDirection: 'row',
     variants: {
         size: {
             larguramax_p: {
                 maxWidth: '600px',
             },
-            larguramax_m: {
-                maxWidth: '90%',
-            },
+
             larguramax_g: {
-                maxWidth: '90%',
+                maxWidth: '70%',
 
             },
         },
@@ -33,9 +61,9 @@ const Conteudo = styled('div', {
 const Navegacao = styled('nav', {
 
     display: 'flex',
-    direction: 'column',
-    justifyContent: 'space-between',
-
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    // marginLeft: '25%',
     variants: {
         size: {
             larguramax_p: {
@@ -50,25 +78,40 @@ const Navegacao = styled('nav', {
 })
 
 const Botao = styled('button', {
-    backgroundColor: 'gainsboro',
-    width: '80px',
-    borderRadius: '2px',
+
+    backgroundColor: '$background',
+    width: '240px',
+    height: '40px',
+    border: 'none',
+    borderBottom: '4px solid $amarelo',
+    borderRadius: '4px',
     fontSize: '13px',
+    '&:hover': {
+        borderBottom: '6px  solid $amarelo',
+        transition: 'all 0.2s cubic-bezier(.08,.62,.92,1)',
+        // boxShadow: '0px 1px 0px 0px silver',
+    },
 })
 
 
 
 const Quadro = styled('div', {
+    paddingY: '$4',
     backgroundColor: '$background',
-    borderTop: '2px solid $amarelo',
-    borderBottom: '2px solid $amarelo',
+    // borderTop: '4px solid $amarelo',
+    borderBottom: '4px solid $amarelo',
+    borderRadius: '4px',
+    textAlign: 'justify',
+    fontFamily: '$josefinSans',
+
+
     variants: {
         size: {
             larguramax_p: {
                 maxWidth: '100%',
             },
             larguramax_g: {
-                maxWidth: '585px',
+                maxWidth: '46%',
             },
 
         },
@@ -84,14 +127,19 @@ const OutroComponenteStitches = styled('div', {
 });
 
 
+const Titulo = styled('p', {
+    fontFamily: '$josefinSans',
+    color: '$hiContrast',
+    marginBottom: '$2',
+})
 
 const Texto = styled('p', {
-    fontFamily: '$system',
+    fontFamily: '$josefinSans',
     color: '$hiContrast',
 })
 
 const Link = styled('a', {
-    fontFamily: '$system',
+    fontFamily: '$josefinSans',
     textDecoration: 'none',
     color: '$purple600',
 })
@@ -99,7 +147,7 @@ const Link = styled('a', {
 
 
 
-
+// Referencia estilização Stitches
 // const Botao = styled('button', {
 //         backgroundColor: 'gainsboro',
 //         borderRadius: '9999px',
@@ -135,7 +183,7 @@ const Link = styled('a', {
 //     });
 
 
-export { OutroComponenteStitches, Botao, Tudo, Quadro, Texto, Link, Conteudo, Navegacao }
+export { cssGlobal, OutroComponenteStitches, Botao, Tudo, Quadro, Texto, Link, Conteudo, Navegacao, Cabecalho, Titulo }
 
 
 
